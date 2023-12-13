@@ -304,10 +304,10 @@ class Play extends Phaser.Scene {
     }
 
     // Player scoring
-    playerSubmitCandy(player) { //take out player maybe
+    playerSubmitCandy(player) {
         if (this.weight > 0) {
             // Score manipulation
-            if (this.isPointTimer == false) {
+            if (!this.isPointTimer) {
                 this.isPointTimer = true;
                 // Timer to turn unload Candys 1 by 1
                 this.pointTimer = this.time.delayedCall(250, () => {
@@ -315,6 +315,10 @@ class Play extends Phaser.Scene {
                     this.isPointTimer = false;
                     this.weight--;
                     this.CandyCount.text = "Candys: " + this.weight;
+                    if (this.weight <= 0) {
+                        // Ensure the timer is stopped if no more Candys
+                        this.isPointTimer = false;
+                    }
                     if (game.settings.startPositionBuffer >= 50) {
                         game.settings.startPositionBuffer -= 50;
                     }
@@ -323,7 +327,7 @@ class Play extends Phaser.Scene {
                     this.score.text = "Score: " + this.points;
                 }, null, this);
             }
-            if (this.soundBool == false) {
+            if (!this.soundBool) {
                 this.sound.play('scoresfx', { volume: 0.2 });
                 this.soundBool = true;
             }
