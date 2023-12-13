@@ -25,8 +25,8 @@ class Tutorial extends Phaser.Scene {
         // show tutorial text
         let centerX = game.config.width / 2;
         let centerY = game.config.height / 2;
-        this.add.text(centerX, centerY - 200, 'Tutorial', tutorialConfig).setScale(1.5, 1.5).setOrigin(0.5);
-        this.add.text(centerX, centerY - 105, 'Objective:', tutorialConfig).setOrigin(0.5);
+        this.add.text(centerX, centerY - 250, 'Tutorial', tutorialConfig).setScale(1.5, 1.5).setOrigin(0.5);
+        this.add.text(centerX, centerY - 250, 'Objective:', tutorialConfig).setOrigin(0.5);
         this.add.text(centerX, centerY - 70, 'Collect Candys while dodging the Ralphs', tutorialConfig).setOrigin(0.5);
         this.add.text(centerX, centerY - 35, 'Game speed correlates to total amount of unspent Candys', tutorialConfig).setOrigin(0.5);
         this.add.text(centerX, centerY, 'Going off of the screen will result in game over', tutorialConfig).setOrigin(0.5);

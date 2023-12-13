@@ -120,7 +120,7 @@ class Play extends Phaser.Scene {
         // Game over and scene swap
         if (this.gameOver == true) {
             this.add.text(this.centerX, this.centerY, 'Press (M) To Return To The Main Menu!', this.playConfig).setOrigin(0.5);
-            this.add.text(this.centerX, this.centerY - this.textSpacer, 'Press (R) To Restart!', this.playConfig).setOrigin(0.5);
+            this.add.text(this.centerX, this.centerY - this.textSpacer, 'Press(R) To Restart!', this.playConfig).setOrigin(0.5);
             if (keyR.isDown) {
                 this.scene.start("playScene");
             }
