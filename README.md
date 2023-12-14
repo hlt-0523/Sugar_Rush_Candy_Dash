@@ -1,5 +1,5 @@
 # Sugar Rush: Candy Dash
-##Made by Lingtian He😀. 
+## Made by Lingtian He😀. 
 
 ## Overview
 
