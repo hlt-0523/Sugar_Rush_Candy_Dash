@@ -1,4 +1,6 @@
 # Sugar Rush: Candy Dash
+##Made by Lingtian He😀. 
+
 ## Overview
 
 **Sugar Rush**: Candy Dash is an endless runner-style 2D game inspired by the fictional game "Sugar Rush" from Wreck-It Ralph. Set in the sweet and vibrant world of Sugar Rush, players dash through ever-changing candy-themed landscapes, dodging obstacles, collecting sweets, and competing for high scores.
