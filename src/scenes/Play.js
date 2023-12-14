@@ -1,10 +1,12 @@
+// Play class definition, extending Phaser.Scene for the main gameplay
 class Play extends Phaser.Scene {
     constructor() {
-        super("playScene");
+        super("playScene"); // Call the parent class constructor and name the scene 'playScene'
     }
-
+    
+    // Preload method to load game assets
     preload() {
-        // Load assets
+// Load various assets used in the game scene
         this.load.image('Race_Car', './assets/Race_Car.png');
         this.load.image('Candy', './assets/Candy.png');
         this.load.image('obstacle', './assets/Ralph.png');
@@ -17,13 +19,12 @@ class Play extends Phaser.Scene {
         this.load.audio('bgmusic', './assets/CandyBGM.mp3');
         this.load.audio('scoresfx', './assets/GetScore.mp3');
     }
-
+    // Create method to setup the game play scene
     create() {
-        // Place tile sprite
+         // Place tile sprites for background and other graphical elements
         this.wpTop = this.add.tileSprite(0, 0, 632, 70, 'topbg').setScale(4, 4).setOrigin(0, 0);
         this.wpBot = this.add.tileSprite(0, 283, 316, 108, 'botbg').setScale(4.1, 4).setOrigin(0, 0);
-
-        // Define keyboard keys
+        // Define keyboard keys for player control
         keyUP = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.UP);
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
@@ -63,7 +64,7 @@ class Play extends Phaser.Scene {
         this.player = new Player(this, 1000, 3 * 144 - 20, 'runanim').setScale(3, 3).setSize(160, 160).setOrigin(0, 0.5);
         this.player.anims.play('run')
 
-        // Conditions
+        // Setup initial game conditions
         this.gameOver = false;
         this.positionChecker = true;
         this.isCandySwampTimer = false;
@@ -105,9 +106,9 @@ class Play extends Phaser.Scene {
         this.add.rectangle(0, 0, 5, 720, 0x000000).setOrigin(0, 0); // top
         this.add.rectangle(1275, 0, 5, 720, 0x000000).setOrigin(0, 0); // right    
     }
-
+    // Update method called every frame
     update() {
-        // Tile scrolling
+        // Handle background tile scrolling
         this.wpTop.tilePositionX -= game.settings.globalSpeed / 4;
         this.wpBot.tilePositionX -= game.settings.globalSpeed / 4;
 
@@ -117,7 +118,7 @@ class Play extends Phaser.Scene {
             this.gameOver = true;
         }
 
-        // Game over and scene swap
+        // Check for game over condition
         if (this.gameOver == true) {
             this.add.text(this.centerX, this.centerY, 'Press (M) To Return To The Main Menu!', this.playConfig).setOrigin(0.5);
             this.add.text(this.centerX, this.centerY - this.textSpacer, 'Press(R) To Restart!', this.playConfig).setOrigin(0.5);
@@ -156,7 +157,7 @@ class Play extends Phaser.Scene {
             }, null, this);
         }
 
-        // Check player collisions
+        // Check for collisions and handle player scoring
         if (this.checkCollision(this.player, this.Ralph0)) {
             this.playerHit(this.player, this.Ralph0);
         }
@@ -205,7 +206,7 @@ class Play extends Phaser.Scene {
             this.CandySwamp.x -= 160;
         }
 
-        // Update objects
+        // Update player and other game objects
         if (this.gameOver) {
             this.player.x = 100000000;
         }
