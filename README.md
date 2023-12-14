@@ -1,6 +1,5 @@
-Sugar Rush: Candy Dash
-
-Overview
+# Sugar Rush: Candy Dash
+## Overview
 
 Sugar Rush: Candy Dash is an endless runner-style 2D game inspired by the fictional game "Sugar Rush" from Wreck-It Ralph. Set in the sweet and vibrant world of Sugar Rush, players dash through ever-changing candy-themed landscapes, dodging obstacles, collecting sweets, and competing for high scores.
 File Structure
@@ -16,7 +15,7 @@ Tutorial.js: Tutorial scene explaining game mechanics.
 index.html: Entry point for the game.
 package.json: Node.js configuration file for the project.
 
-Contributing
+## Contributing
 Contributions to Sugar Rush: Candy Dash are welcome! If you have an idea or suggestion, please follow these steps:
 
 Fork the repository.
@@ -25,13 +24,13 @@ Make your changes and commit them (git commit -am 'Add some feature').
 Push to the branch (git push origin feature-name).
 Create a new Pull Request.
 
-Known Issues and Testing
-Issues
+## Known Issues and Testing
+**Issues** 
 Game Freeze on CandySwamp: When the player reaches the CandySwamp and presses 'F', the game freezes while audio continues. Investigations suggest this might be related to the game loop or event handling within Play.js.
 
 Collision Handling: Some collision detections are not consistent, especially at higher speeds, potentially due to timing issues in the update loop.
 
-Testing
+## Testing
 Checkpoint and Obstacle Mechanics: Frequent testing is required to ensure that the spawning and behavior of checkpoints and obstacles are consistent and bug-free.
 
 Player Interactions: Thorough testing of player controls and interactions with game objects is critical, particularly after implementing new features or adjustments.
